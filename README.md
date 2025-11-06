@@ -89,73 +89,8 @@ src/main/java/com/ved/ShopMatrix/
 This diagram shows the logical relationships between the collections. In MongoDB, `Cart` and `CartItem` are **embedded** within the `User` document, and `OrderItem` is **embedded** within the `Order` document.
 
 You can paste the code below into **[dbdiagram.io](https://dbdiagram.io/)** to visualize the schema.
+Or Open Diagram -> https://dbdiagram.io/d/ShopMatrix-690c5d596735e11170845cc5 
 
-erDiagram
-    User {
-        string id PK "ObjectID"
-        string username UK
-        string email UK
-        string password
-        string firstName
-        string lastName
-        array roles "e.g., [ROLE_CUSTOMER, ROLE_ADMIN]"
-        object cart "Embedded Cart object"
-        timestamp createdAt
-    }
-
-    Category {
-        string id PK "ObjectID"
-        string name
-        string description
-        string imageUrl
-    }
-
-    Product {
-        string id PK "ObjectID"
-        string categoryId FK "References Category(id)"
-        string name
-        string description
-        decimal price
-        int stock
-        string imageUrl
-    }
-
-    Order {
-        string id PK "ObjectID"
-        string userId FK "References User(id)"
-        string status "PENDING, SHIPPED, etc."
-        decimal total
-        array items "Embedded array of OrderItem"
-        timestamp createdAt
-    }
-
-    User ||--o{ Cart : "embeds"
-    Order ||--o{ OrderItem : "embeds"
-    Product ||--|{ Category : "belongs to"
-    Order ||--|| User : "placed by"
-
-    CartItem {
-        string productId FK "References Product(id)"
-        string productName
-        int quantity
-        decimal price
-        string imageUrl
-    }
-
-    OrderItem {
-        string productId FK "References Product(id)"
-        string productName
-        int quantity
-        decimal priceAtPurchase
-    }
-    
-    Cart ||--o{ CartItem : "contains"
-
-    subgraph "Embedded Documents (Not Collections)"
-        Cart
-        CartItem
-        OrderItem
-    end
 
 ```dbml
 // ---
