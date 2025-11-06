@@ -1,0 +1,26 @@
+package com.ved.ShopMatrix.model;
+
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.math.BigDecimal;
+
+@Data
+@Document(collection = "products")
+public class Product {
+
+    @Id
+    private String id;
+    private String name;
+    private String description;
+    private BigDecimal price;
+    private int stock;
+
+    // This is the foreign key linking to the Category collection
+    private String categoryId;
+
+
+    // --- ADDED THIS LINE ---
+    private String imageUrl;
+}
