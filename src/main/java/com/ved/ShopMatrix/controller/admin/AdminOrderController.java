@@ -1,4 +1,4 @@
-package com.ved.ShopMatrix.controller;
+package com.ved.ShopMatrix.controller.admin;
 
 import com.ved.ShopMatrix.dto.OrderDto;
 import com.ved.ShopMatrix.service.OrderService;
