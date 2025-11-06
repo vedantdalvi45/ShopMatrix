@@ -20,7 +20,5 @@ public class Product {
     // This is the foreign key linking to the Category collection
     private String categoryId;
 
-
-    // --- ADDED THIS LINE ---
     private String imageUrl;
 }
