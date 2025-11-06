@@ -89,8 +89,8 @@ src/main/java/com/ved/ShopMatrix/
 This diagram shows the logical relationships between the collections. In MongoDB, `Cart` and `CartItem` are **embedded** within the `User` document, and `OrderItem` is **embedded** within the `Order` document.
 
 You can paste the code below into **[dbdiagram.io](https://dbdiagram.io/)** to visualize the schema.
-* Or Open Diagram -> https://dbdiagram.io/d/ShopMatrix-690c5d596735e11170845cc5 
 
+// Or open the <a href="https://dbdiagram.io/d/ShopMatrix-690c5d596735e11170845cc5" target="_blank">diagram</a> in a new tab.
 
 ```dbml
 // ---
