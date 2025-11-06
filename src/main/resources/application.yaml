@@ -1,3 +1,15 @@
 spring:
   application:
     name: ShopMatrix
+
+  data:
+    mongodb:
+      uri: ${DATASOURCE_URL}
+      database: ShopMatrix
+
+
+jwt:
+  secret-key: ${JWT_SECRET}
+  expiration-ms: ${JWT_EXPIRATION}
+
+
